@@ -6,15 +6,15 @@ setInterval(() => {
     console.log(`------------------------ Day ${day} --------------------------`)
 }, 10000)
 
-const items = [{ name: 'shoe', price: 30 }, { name: 'shirt', price: 50 }, { name: 'Company stock', price: 40 }, { name: "Violin", price: 300 }, { name: "Tango Lesson", price: 40 }]
+// const items = [{ name: 'shoe', price: 30 }, { name: 'shirt', price: 50 }, { name: 'Company stock', price: 40 }, { name: "Violin", price: 300 }, { name: "Tango Lesson", price: 40 }]
 
 class Barista {
 
-    private level: number = 1; // alttaki özellikelri artırıcak
+    private level: number = 1; // all skills increase when level up
     name: string;
-    speed: number; // => daha çok kahve yapıcak
-    communication: number; // => tip alma yüzdesini artırıcak
-    skill: number; // => kahveyi daha güzel yapıcak
+    speed: number; // => quick coffees
+    communication: number; // => make more money with tips
+    skill: number; // => lose less money when break glass
     madeCoffees: number = 0;
     money: number = 0;
 

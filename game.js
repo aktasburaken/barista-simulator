@@ -4,9 +4,10 @@ setInterval(function () {
     day += 1;
     console.log("------------------------ Day ".concat(day, " --------------------------"));
 }, 10000);
+// const items = [{ name: 'shoe', price: 30 }, { name: 'shirt', price: 50 }, { name: 'Company stock', price: 40 }, { name: "Violin", price: 300 }, { name: "Tango Lesson", price: 40 }]
 var Barista = /** @class */ (function () {
     function Barista(name, speed, communication, skill) {
-        this.level = 1; // alttaki özellikelri artırıcak
+        this.level = 1; // all skills increase when level up
         this.madeCoffees = 0;
         this.money = 0;
         this.name = name;
@@ -40,12 +41,17 @@ var Barista = /** @class */ (function () {
                 console.log("".concat(_this.name, " level upped to ").concat(_this.level));
             }
             else if (_this.level === 10) {
-                console.log("".concat(_this.name, " reached the max level of this game."));
+                return;
             }
             _this.money += 0.10 * _this.communication;
             console.log("".concat(_this.name, " prepared Coffee \u2615 ^^ \n").concat(_this.name, " has ").concat(_this.money.toFixed(2)));
             _this.madeCoffees += 1;
         }, 10000 / this.speed);
+        setInterval(function () {
+            console.log("".concat(_this.name, " broke a glass."));
+            _this.money -= 10 / _this.skill;
+            console.log("".concat(_this.name, " has ").concat(_this.money.toFixed(2)));
+        }, 10000);
     };
     return Barista;
 }());
